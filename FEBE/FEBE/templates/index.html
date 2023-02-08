@@ -1,0 +1,53 @@
+{% block content %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Live Streaming Demonstration</title>
+    <style>
+        input[type=range][orient=vertical] {
+            writing-mode: bt-lr; /* IE */
+            -webkit-appearance: slider-vertical; /* Chromium */
+            width: 8px;
+            height: 175px;
+            padding: 0 5px;
+        }
+
+        img {
+            pointer-events: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        p {
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm">
+                <input type="range" orient="vertical" name="sliderl" min="-100" max="100" />
+            </div>
+            <img src="{{ url_for('video_feed') }}">
+            <div class="col-sm">
+            </div>
+            <div class="col-sm">
+                <input type="range" orient="vertical" name="sliderr" min="-100" max="100" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}
