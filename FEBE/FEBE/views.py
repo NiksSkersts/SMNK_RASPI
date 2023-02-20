@@ -36,12 +36,12 @@ def video_feed():
     return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 @app.route("/sliderl", methods=["POST"])
 def sliderl():
-    left_slider = request.form["left_slider"]
+    left_slider = request.form["sliderl"]
     move(1, left_slider)
     return left_slider
 app.route("/sliderr", methods=["POST"])
 def sliderr():
-    right_slider = request.form["right_slider"]
+    right_slider = request.form["sliderr"]
     move(2, right_slider)
     return right_slider
 
@@ -49,10 +49,11 @@ def sliderr():
 #Backend.py part Dunno why that shit doesn't want to work
 
 import cv2
-camera = cv2.VideoCapture('http://admin:admin@10.40.120.104:8081/video')
+camera = cv2.VideoCapture('http://admin:admin@10.40.121.102:8081/video')
 def gen_frames():
     while True:
-        success, frame = camera
+
+        success, frame = camera.read()
         if not success:
             break
         else:
