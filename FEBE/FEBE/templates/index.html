@@ -38,13 +38,19 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm">
-                <input type="range" orient="vertical" name="sliderl" min="-100" max="100" />
+                <form method="POST" action="sliderl">
+                    <input type="range" orient="vertical" name="sliderl" min="-100" max="100" />
+                    <input type="submit" value="submit" />
+                </form>
             </div>
             <img src="{{ url_for('video_feed') }}">
             <div class="col-sm">
             </div>
             <div class="col-sm">
-                <input type="range" orient="vertical" name="sliderr" min="-100" max="100" />
+                <form method="POST" action="sliderr">
+                    <input type="range" orient="vertical" name="sliderr" min="-100" max="100" />
+                    <input type="submit" value="submit" />
+                </form>
             </div>
         </div>
     </div>
