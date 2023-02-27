@@ -38,22 +38,35 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm">
-                <form method="POST" action="sliderl">
-                    <input type="range" orient="vertical" name="sliderl" min="-100" max="100" />
-                    <input type="submit" value="submit" />
+                <form method="GET" action="sliderl">
+                    <input type="range" orient="vertical" id="sliderl" name="sliderl" min="-64" max="63" />
                 </form>
             </div>
             <img src="{{ url_for('video_feed') }}">
             <div class="col-sm">
             </div>
             <div class="col-sm">
-                <form method="POST" action="sliderr">
-                    <input type="range" orient="vertical" name="sliderr" min="-100" max="100" />
-                    <input type="submit" value="submit" />
+                <form method="GET" action="sliderr">
+                    <input type="range" orient="vertical" id="sliderr" name="sliderr" min="-64" max="63" />
                 </form>
             </div>
         </div>
     </div>
+    <script>
+        const Http = new XMLHttpRequest();
+        var left_slider = document.getElementById("sliderl");
+        var right_slider = document.getElementById("sliderr");
+        left_slider.oninput = function () {
+            current = this.value;
+            Http.open('POST', '/update_sliderl')
+            Http.send(current)
+        }
+        right_slider.oninput = function () {
+            current = this.value;
+            Http.open('POST', '/update_sliderr')
+            Http.send(current)
+        }
+    </script>
 </body>
 </html>
 {% endblock %}
