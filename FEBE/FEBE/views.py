@@ -24,13 +24,11 @@ def video_feed():
 @app.route("/update_sliderl",methods=["GET", "POST"])
 def update_speedl():
     if request.method == "POST":
-        #left_slider = request.form["sliderl"]
         left_slider = request.data
         move(1, left_slider)
 @app.route("/update_sliderr",methods=["GET", "POST"])
 def update_speedr():
     if request.method == "POST":
-       #right_slider = request.form["sliderr"]
        right_slider = request.data
        move(2, right_slider)
 
@@ -39,7 +37,7 @@ def update_speedr():
 
 import cv2
 
-camera = cv2.VideoCapture('http://admin:admin@10.40.121.187:8081/video')
+camera = cv2.VideoCapture('http://admin:admin@10.40.121.36:8081/video')
 
 
 def gen_frames():
