@@ -28,6 +28,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="FEBE\backend.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="runserver.py" />
     <Compile Include="FEBE\__init__.py" />
     <Compile Include="FEBE\views.py" />
@@ -41,6 +44,7 @@
     <Folder Include="FEBE\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FEBE\templates\styles.css" />
     <Content Include="requirements.txt" />
     <Content Include="FEBE\static\content\bootstrap.css" />
     <Content Include="FEBE\static\content\bootstrap.min.css" />

@@ -37,7 +37,7 @@ def update_speedr():
 
 import cv2
 
-camera = cv2.VideoCapture('http://admin:admin@10.40.121.36:8081/video')
+camera = cv2.VideoCapture('http://admin:admin@10.40.120.252:8081/video')
 
 
 def gen_frames():
